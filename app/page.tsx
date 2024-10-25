@@ -1,10 +1,10 @@
 // import Image from "next/image";
-import Nav from "./Components/Nav";
+// import Nav from "./Components/Nav";
 
 export default function Home() {
   return (
     <div>
-      <Nav />
+      <h1>Home</h1>
     </div>
   );
 }
