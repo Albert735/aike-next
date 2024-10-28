@@ -34,9 +34,9 @@ const Hero = () => {
         />
       </div>
 
-      <div className="flex justify-center items-center w-full ">
+      <div className="flex justify-center items-center w-full gap-5">
         <button>Shop now</button>
-        <span>
+        <span className="flex justify-start items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -53,7 +53,7 @@ const Hero = () => {
           </svg>
           <p>Free Delivery</p>
         </span>
-        <span>
+        <span className="flex justify-start items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -69,6 +69,56 @@ const Hero = () => {
             />
           </svg>
           <p>Always on-time</p>
+        </span>
+      </div>
+
+      <div className="flex justify-center -space-x-3 items-center  ">
+        <Image
+          height={50}
+          width={50}
+          className="h-[3rem] w-[3rem] object-cover rounded-full"
+          src="/assets/close-up-young-person-barbeque.jpg"
+          alt=""
+        />
+        <Image
+          height={50}
+          width={50}
+          className="h-[3rem] w-[3rem] object-cover rounded-full "
+          src="/assets/front-view-smiley-man-outdoors-city.jpg"
+          alt=""
+        />
+        <Image
+          height={50}
+          width={50}
+          className="h-[3rem] w-[3rem] object-cover rounded-full "
+          src="/assets/porait-cute-boy-cafe.jpg"
+          alt=""
+        />
+        <Image
+          height={50}
+          width={50}
+          className="h-[3rem] w-[3rem] object-cover rounded-full "
+          src="/assets/portrait-upset-american-black-person.jpg"
+          alt=""
+        />
+      </div>
+      <div>
+        <span className="flex gap-7 leading-loose flex-wrap  justify-center items-start">
+          <p className="text-center xl:text-start">
+            <b>100%</b> <br />
+            <span className="text-gray-500">Brand new</span>
+          </p>
+          <p className="text-center xl:text-start">
+            <b>120,000+</b> <br />
+            <span className="text-gray-500">items sold out</span>
+          </p>
+          <p className="text-center xl:text-start">
+            <b>Ratings</b> <br />
+            <span className="text-gray-500 flex justify-center items-center gap-2">
+              4.8
+              
+            </span>
+          </p>
         </span>
       </div>
     </div>
