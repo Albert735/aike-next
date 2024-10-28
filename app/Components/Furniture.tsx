@@ -12,14 +12,18 @@ const Furniture = () => {
 
       <div className="flex space-x-5">
         {PopularArrays.map((item, index) => (
-          <div key={index} className="p-2 bg-gray-100 rounded-lg backdrop-blur">
-            <Image
-              height={60}
-              width={60}
-              src={item.image} // Ensure this points to the correct path or URL
-              alt={item.name || "Furniture Item"} // Improved alt text for accessibility
-              className="w-[15rem] h-[20rem] object-cover rounded-lg backdrop-blur"
-            />
+          <div
+            key={index}
+            className="p-2 bg-gray-100 rounded-lg backdrop-blur hover:scale-105 transition-all ease-in-out duration-150"
+          >
+            <div className="w-[15rem] h-[20rem] relative overflow-hidden rounded-lg">
+              <Image
+                src={item.image} // Ensure this points to the correct path or URL
+                alt={item.name || "Furniture Item"} // Improved alt text for accessibility
+                fill // This will let the image fill its parent container
+                className="object-cover"
+              />
+            </div>
             <div className="Golanerounded flex justify-between py-2">
               <span>
                 <h2 className="font-bold">{item.name}</h2>

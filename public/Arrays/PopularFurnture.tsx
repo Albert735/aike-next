@@ -1,32 +1,38 @@
+import kalaxtable from "../assets/kalaxtable.jpg";
+import Mammut from "../assets/mammut.jpg";
+import Arklestorp from "../assets/arklestorp.jpg";
+import Lax from "../assets/lax.jpg";
+import NaxuDuo from "../assets/Naxuduo.jpg";
+
 export const PopularArrays = [
   {
     id: 0,
     name: "Kalx Table",
     description: "Lorem Ipsum",
-    image: "/assets/view-modern-photorealistic-lamp (1).jpg",
+    image: kalaxtable,
   },
   {
     id: 1,
     name: "Mammut",
     description: "Lorem Ipsum",
-    image: "/assets/realistic-interior-design-with-furniture.jpg",
+    image: Mammut,
   },
   {
     id: 2,
     name: "Arklestorp",
     description: "Lorem Ipsum",
-    image: "/assets/view-room-with-furniture-beige-monochrome-palette.jpg",
+    image: Arklestorp,
   },
   {
     id: 3,
     name: "Lax",
     description: "Lorem Ipsum",
-    image: "/assets/modern-entryway-with-furniture-home-decor.jpg",
+    image: Lax,
   },
   {
     id: 4,
     name: "Naxu duo",
     description: "Lorem Ipsum",
-    image: "/assets/background-with-simple-white-walls-furniture.jpg",
+    image: NaxuDuo,
   },
 ];
