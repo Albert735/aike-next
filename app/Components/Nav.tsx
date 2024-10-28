@@ -20,7 +20,7 @@ const Nav = () => {
       <div className="flex flex-row justify-center items-center gap-5">
         <h1
           className={`link font-bold xl:text-[2rem] text-[1.5rem]  ${
-            pathname === "/" ? "bg-orange-500 " : ""
+            pathname === "/" ? " " : ""
           }`}
         >
           <Link href="/">AIKE </Link>
