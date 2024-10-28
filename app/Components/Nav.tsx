@@ -18,91 +18,100 @@ const Nav = () => {
   return (
     <div className="flex justify-between items-center max-w-screen-xl mx-auto py-4 xl:px-2 px-4">
       <div className="flex flex-row justify-center items-center gap-5">
-        <Link href="/">
-          <h1
-            className={`link font-bold xl:text-[2rem] text-[1.5rem]  ${
-              pathname === "/" ? "bg-orange-500 " : ""
-            }`}
-          >
-            AIKE
-          </h1>
-        </Link>
+        <h1
+          className={`link font-bold xl:text-[2rem] text-[1.5rem]  ${
+            pathname === "/" ? "bg-orange-500 " : ""
+          }`}
+        >
+          <Link href="/">AIKE </Link>
+        </h1>
+
         <div></div>
 
         {/* Desktop Menu */}
         <div className="hidden xl:flex">
           <ul className=" flex justify-center items-center w-full gap-4">
-            <Link
-              href="/Category"
-              className={`link ${
-                pathname === "/Category" ? "text-black" : "text-gray-400"
-              }`}
-            >
-              <span className="relative inline-block group">
-                <span className="flex justify-center items-center gap-1">
-                  <li>Category</li>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-4 h-4"
+            <span className="relative inline-block group">
+              <span className="flex justify-center items-center gap-2">
+                <li>
+                  <Link
+                    href="/Category"
+                    className={`link ${
+                      pathname === "/Category" ? "text-black" : "text-gray-400"
+                    }`}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                    />
-                  </svg>
-                </span>
-
-                {/* <!-- Dropdown Menu--> */}
-                <div className="absolute hidden group-hover:block bg-gray-50 text-gray-700 mt-2 py-2 w-[20rem] shadow-lg rounded">
-                  <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                    Living room
+                    Category
                   </Link>
-                  <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                    Bed room
-                  </Link>
-                  <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                    Dining room
-                  </Link>
-                  <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
-                    Home office
-                  </Link>
-                </div>
+                </li>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="2.0"
+                  stroke="currentColor"
+                  className={`link w-3 h-4 ${
+                    pathname === "/Category" ? "text-black" : "text-gray-400"
+                  }`}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  />
+                </svg>
               </span>
-            </Link>
 
-            <Link
-              href="/Promo"
-              className={`link ${
-                pathname === "/Promo" ? "text-black" : "text-gray-400"
-              }`}
-            >
-              <li>Promo</li>
-            </Link>
+              {/* <!-- Dropdown Menu--> */}
+              <div className="absolute hidden group-hover:block bg-gray-50 text-gray-700 mt-2 py-2 w-[20rem] shadow-md rounded">
+                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
+                  Living room
+                </Link>
+                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
+                  Bed room
+                </Link>
+                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
+                  Dining room
+                </Link>
+                <Link href="#" className="block px-4 py-2 hover:bg-gray-100">
+                  Home office
+                </Link>
+              </div>
+            </span>
 
-            <Link
-              href="/IntDesign"
-              className={`link ${
-                pathname === "/IntDesign" ? "text-black" : "text-gray-400"
-              }`}
-            >
-              <li>Interior Design</li>
-            </Link>
+            <li>
+              <Link
+                href="/Promo"
+                className={`link ${
+                  pathname === "/Promo" ? "text-black" : "text-gray-400"
+                }`}
+              >
+                Promo
+              </Link>
+            </li>
 
-            <Link
-              href="/ProductRecommendation"
-              className={`link ${
-                pathname === "/ProductRecommendation"
-                  ? "text-black"
-                  : "text-gray-400"
-              }`}
-            >
-              <li>Product Recommendation</li>
-            </Link>
+            <li>
+              <Link
+                href="/IntDesign"
+                className={`link ${
+                  pathname === "/IntDesign" ? "text-black" : "text-gray-400"
+                }`}
+              >
+                Interior Design
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/ProductRecommendation"
+                className={`link ${
+                  pathname === "/ProductRecommendation"
+                    ? "text-black"
+                    : "text-gray-400"
+                }`}
+              >
+                Product Recommendation
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -148,51 +157,53 @@ const Nav = () => {
               </svg>
             </div>
             <ul className="flex flex-col items-start gap-4 pt-6 px-4 space-y-2">
-              <Link
-                href="/Category"
-                className={`link ${
-                  pathname === "/Category" ? "text-black" : "text-gray-400"
-                }`}
+              <span
+                onClick={toggleCategory}
+                className="flex justify-center items-center gap-3"
               >
-                <span
-                  onClick={toggleCategory}
-                  className="flex justify-center items-center gap-3"
-                >
-                  <li>Category</li>
+                <li>
+                  <Link
+                    href="/Category"
+                    className={`link ${
+                      pathname === "/Category" ? "text-black" : "text-gray-400"
+                    }`}
+                  >
+                    Category
+                  </Link>
+                </li>
 
-                  {category ? (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      className="w-5 h-5  rotate-180 transition-all duration-200 ease-in-out"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                      />
-                    </svg>
-                  ) : (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      className="w-5 h-5 transition-all duration-200 ease-in-out"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-                      />
-                    </svg>
-                  )}
-                </span>
-              </Link>
+                {category ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-5 h-5  rotate-180 transition-all duration-200 ease-in-out"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-5 h-5 transition-all duration-200 ease-in-out"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                )}
+              </span>
 
               {category && (
                 <ul className="flex flex-col items-start gap-4 py-6 px-4 w-full space-y-2 bg-gray-200 rounded-md transition-all ease-in-out">
@@ -203,32 +214,38 @@ const Nav = () => {
                 </ul>
               )}
 
-              <Link
-                href="/Promo"
-                className={`link ${
-                  pathname === "/Promo" ? "text-black" : "text-gray-400"
-                }`}
-              >
-                <li>Promo</li>
-              </Link>
-              <Link
-                href="/IntDesign"
-                className={`link ${
-                  pathname === "/IntDesign" ? "text-black" : "text-gray-400"
-                }`}
-              >
-                <li>Interior Design</li>
-              </Link>
-              <Link
-                href="/ProductRecommendation"
-                className={`link ${
-                  pathname === "/ProductRecommendation"
-                    ? "text-black"
-                    : "text-gray-400"
-                }`}
-              >
-                <li>Product Recommendation</li>
-              </Link>
+              <li>
+                <Link
+                  href="/Promo"
+                  className={`link ${
+                    pathname === "/Promo" ? "text-black" : "text-gray-400"
+                  }`}
+                ></Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/IntDesign"
+                  className={`link ${
+                    pathname === "/IntDesign" ? "text-black" : "text-gray-400"
+                  }`}
+                >
+                  Interior Design
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/ProductRecommendation"
+                  className={`link ${
+                    pathname === "/ProductRecommendation"
+                      ? "text-black"
+                      : "text-gray-400"
+                  }`}
+                >
+                  Product Recommendation
+                </Link>
+              </li>
             </ul>
             <div className="mt-4 px-4">
               <Search />
