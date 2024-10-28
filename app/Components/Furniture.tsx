@@ -4,23 +4,23 @@ import { PopularArrays } from "../../public/Arrays/PopularFurnture";
 
 const Furniture = () => {
   return (
-    <div className="flex flex-col justify-between items-center max-w-screen-xl mx-auto py-4 xl:px-2 px-4 space-y-[2rem]">
+    <div className="flex flex-col justify-between items-center max-w-screen-xl mx-auto py-4 xl:px-2 px-4 space-y-[2rem] mt-[5rem]">
       <div className="flex flex-col justify-center items-center w-full py-5">
         <h1 className="CisalackSignature text-xl">POPULAR</h1>
         <h1 className="Golanerounded text-[2rem]">Furniture Sale Now On!</h1>
       </div>
 
-      <div className="bg-slate-400">
+      <div className="flex space-x-5">
         {PopularArrays.map((item, index) => (
-          <div key={index} className="p-4">
+          <div key={index} className="p-2 bg-gray-100 rounded-lg backdrop-blur">
             <Image
               height={60}
               width={60}
               src={item.image} // Ensure this points to the correct path or URL
               alt={item.name || "Furniture Item"} // Improved alt text for accessibility
-              className="w-[5rem] h-[20rem]"
+              className="w-[15rem] h-[20rem] object-cover rounded-lg backdrop-blur"
             />
-            <div className="flex">
+            <div className="Golanerounded flex justify-between py-2">
               <span>
                 <h2 className="font-bold">{item.name}</h2>
                 <p className="text-gray-600">{item.description}</p>
