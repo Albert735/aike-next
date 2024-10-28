@@ -3,40 +3,64 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col justify-between items-center max-w-screen-xl mx-auto py-4 xl:px-2 px-4">
-      <div className="flex flex-col w-full  justify-center items-center ">
-        <h1 className="">
-          Discover elegant & affordable furniture for every room.
+    <div className="flex flex-col justify-between items-center max-w-screen-xl mx-auto py-4 xl:px-2 px-4 space-y-[5rem]">
+      <div className="flex flex-col w-full justify-center items-center gap-5 ">
+        <h1 className="xl:text-[4rem] text-[2rem] md:text-[2.5rem] text-center  Golanerounded leading-tight">
+          Discover elegant & <br /> affordable furniture for <br /> every room.
+          {/* <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2.0}
+            stroke="currentColor"
+            className="size-8 bg-green-300"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+            />
+          </svg> */}
         </h1>
-        <p>
-          Transform your furniture with sophisticated and stylish pieces and
-          create a serene and inviting home
+        <p className="text-gray-500 leading-loose text-center  text-sm xl:text-lg">
+          Transform your furniture with sophisticated{" "}
+          <span className="CisalackSignature xl:text-[2rem] px-2">stylish</span>
+          pieces <br /> and create a serene and inviting home
         </p>
       </div>
-      <div className="flex justify-between items-center w-full ">
+
+      {/* images  */}
+      <div className="flex justify-center items-center w-full gap-10">
         <Image
           src="/assets/rendering-elegant-interior .jpg"
           width={300}
           height={300}
           alt="hero"
+          className="rounded-lg h-[30rem] object-cover"
         />
         <Image
           src="/assets/modern-styled-entryway.jpg"
           width={300}
           height={300}
           alt="hero"
+          className="rounded-lg h-[30rem] object-cover relative bottom-10 "
         />
         <Image
           src="/assets/view-nordic-minimalism-japanese-wabi-sabi-interior-design-blend.jpg"
           width={300}
           height={300}
           alt="hero"
+          className="rounded-lg h-[30rem] object-cover"
         />
       </div>
 
+      {/* delivery   */}
+
       <div className="flex justify-center items-center w-full gap-5">
-        <button>Shop now</button>
-        <span className="flex justify-start items-center gap-2">
+        <button className="bg-black text-white px-3 py-2 rounded-md">
+          Shop now
+        </button>
+        <span className="flex justify-start items-center gap-2 hover:bg-black/10 px-3 py-2 rounded-md">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -53,7 +77,7 @@ const Hero = () => {
           </svg>
           <p>Free Delivery</p>
         </span>
-        <span className="flex justify-start items-center gap-2">
+        <span className="flex justify-start items-center gap-2  hover:bg-black/10 px-3 py-2 rounded-md">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -71,6 +95,8 @@ const Hero = () => {
           <p>Always on-time</p>
         </span>
       </div>
+
+      {/* profile  */}
 
       <div className="flex justify-center -space-x-3 items-center  ">
         <Image
@@ -102,21 +128,52 @@ const Hero = () => {
           alt=""
         />
       </div>
-      <div>
-        <span className="flex gap-7 leading-loose flex-wrap  justify-center items-start">
-          <p className="text-center xl:text-start">
+
+      {/* ratings  */}
+      <div className="flex justify-center items-center">
+        <span className="flex gap-7 leading-loose flex-wrap  justify-center items-center">
+          <p className="text-center ">
             <b>100%</b> <br />
             <span className="text-gray-500">Brand new</span>
           </p>
-          <p className="text-center xl:text-start">
+          <p className="text-center ">
             <b>120,000+</b> <br />
             <span className="text-gray-500">items sold out</span>
           </p>
-          <p className="text-center xl:text-start">
+          <p className="text-center ">
             <b>Ratings</b> <br />
             <span className="text-gray-500 flex justify-center items-center gap-2">
               4.8
-              
+              <Image
+                src="/assets/icons8-star-100.png"
+                alt=""
+                height={18}
+                width={18}
+              />
+              <Image
+                src="/assets/icons8-star-100.png"
+                alt=""
+                height={18}
+                width={18}
+              />
+              <Image
+                src="/assets/icons8-star-100.png"
+                alt=""
+                height={18}
+                width={18}
+              />
+              <Image
+                src="/assets/icons8-star-100.png"
+                alt=""
+                height={18}
+                width={18}
+              />
+              <Image
+                src="/assets/icons8-star-half-empty-100.png"
+                alt=""
+                height={18}
+                width={18}
+              />
             </span>
           </p>
         </span>

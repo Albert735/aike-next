@@ -19,24 +19,22 @@ const Nav = () => {
     <div className="flex justify-between items-center max-w-screen-xl mx-auto py-4 xl:px-2 px-4">
       <div className="flex flex-row justify-center items-center gap-5">
         <h1
-          className={`link font-bold xl:text-[2rem] text-[1.5rem]  ${
+          className={`link CisalackSignature font-bold xl:text-[2rem] text-[1.5rem]  ${
             pathname === "/" ? " " : ""
           }`}
         >
           <Link href="/">AIKE </Link>
         </h1>
 
-        <div></div>
-
         {/* Desktop Menu */}
         <div className="hidden xl:flex">
-          <ul className=" flex justify-center items-center w-full gap-4">
+          <ul className="Golanerounded flex justify-center items-center w-full gap-4 ">
             <span className="relative inline-block group">
               <span className="flex justify-center items-center gap-2">
                 <li>
                   <Link
                     href="/Category"
-                    className={`link ${
+                    className={`link hover:text-black/60  ${
                       pathname === "/Category" ? "text-black" : "text-gray-400"
                     }`}
                   >
@@ -49,7 +47,7 @@ const Nav = () => {
                   viewBox="0 0 24 24"
                   strokeWidth="2.0"
                   stroke="currentColor"
-                  className={`link w-3 h-4 ${
+                  className={`link w-3 h-4 hover:text-black/60 ${
                     pathname === "/Category" ? "text-black" : "text-gray-400"
                   }`}
                 >
@@ -81,7 +79,7 @@ const Nav = () => {
             <li>
               <Link
                 href="/Promo"
-                className={`link ${
+                className={`link hover:text-black/60 ${
                   pathname === "/Promo" ? "text-black" : "text-gray-400"
                 }`}
               >
@@ -92,7 +90,7 @@ const Nav = () => {
             <li>
               <Link
                 href="/IntDesign"
-                className={`link ${
+                className={`link hover:text-black/60 ${
                   pathname === "/IntDesign" ? "text-black" : "text-gray-400"
                 }`}
               >
@@ -103,7 +101,7 @@ const Nav = () => {
             <li>
               <Link
                 href="/ProductRecommendation"
-                className={`link ${
+                className={`link hover:text-black/60 ${
                   pathname === "/ProductRecommendation"
                     ? "text-black"
                     : "text-gray-400"
@@ -117,7 +115,7 @@ const Nav = () => {
       </div>
 
       {/* Mobile Menu Toggle */}
-      <div className="flex xl:hidden">
+      <div className="Golanerounded flex xl:hidden">
         <svg
           onClick={toggleMenu}
           xmlns="http://www.w3.org/2000/svg"
@@ -137,7 +135,7 @@ const Nav = () => {
 
       {/* Mobile Menu */}
       {openMenu && (
-        <div className="xl:hidden fixed inset-0 flex flex-col items-end bg-black/20 backdrop-blur z-10">
+        <div className="Golanerounded xl:hidden fixed inset-0 flex flex-col items-end bg-black/20 backdrop-blur z-10">
           <div className="bg-slate-50 h-screen w-[15rem] space-y-10">
             <div className="flex justify-end p-4">
               <svg
