@@ -9,11 +9,13 @@ import Link from "next/link";
 const Nav = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const toggleMenu = () => setOpenMenu(!openMenu);
+  console.log(toggleMenu);
 
   const [category, setCategory] = useState(false);
   const toggleCategory = () => setCategory(!category);
 
   const pathname = usePathname();
+  console.log(pathname);
 
   return (
     <div className="flex justify-between items-center max-w-screen-xl mx-auto py-4 xl:px-2 px-4">

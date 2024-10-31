@@ -10,17 +10,19 @@ const Furniture = () => {
   const handleLiked = (index: number) => {
     setLiked((prevLiked) => ({
       ...prevLiked,
-      [index]: !prevLiked[index], // Removed the space here
+      [index]: !prevLiked[index],
     }));
+    console.log(index, "liked");
   };
+
   return (
     <div className="flex flex-col justify-between items-center max-w-screen-xl mx-auto py-4 xl:px-2 px-4 space-y-[2rem] mt-[5rem]">
-      <div className="flex flex-col justify-center items-center  py-5">
+      <div className="flex flex-col justify-center items-center py-5">
         <h1 className="CisalackSignature text-[2rem]">Popular</h1>
         <h1 className="Golanerounded text-[2rem]">Furniture Sale Now On!</h1>
       </div>
 
-      <div className="flex flex-col flex-wrap justify-center items-center xl:flex-row gap-x-5 gap-y-5 ">
+      <div className="flex flex-wrap justify-center items-center xl:flex-row gap-x-5 gap-y-5">
         {PopularArrays.map((item, index) => (
           <div
             key={index}
@@ -28,9 +30,10 @@ const Furniture = () => {
           >
             <div className="w-[15rem] h-[20rem] relative overflow-hidden rounded-lg">
               <Image
-                src={item.image} // Ensure this points to the correct path or URL
-                alt={item.name || "Furniture Item"} // Improved alt text for accessibility
-                fill // This will let the image fill its parent container
+                src={item.image}
+                alt={item.name}
+                fill
+                sizes="(max-width: 768px) 100vw, 300px" // Adjust sizes based on expected widths
                 className="object-cover"
               />
             </div>
@@ -42,15 +45,11 @@ const Furniture = () => {
               <svg
                 onClick={() => handleLiked(index)}
                 xmlns="http://www.w3.org/2000/svg"
-                fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6 text-gray-700"
-                style={{
-                  fill: liked[index] ? "red" : "none", // Toggle the fill color
-                  color: liked[index] ? "red" : "gray", // Toggle the stroke color
-                }}
+                className={`w-6 h-6 ${
+                  liked[index] ? "text-red-500 fill-red-500" : "text-white"
+                }`}
               >
                 <path
                   strokeLinecap="round"

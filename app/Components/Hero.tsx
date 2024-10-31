@@ -35,6 +35,8 @@ const Hero = () => {
           <Image
             src="/assets/rendering-elegant-interior .jpg"
             fill
+            priority
+            sizes="6"
             alt="hero"
             className="object-cover"
           />
@@ -44,6 +46,8 @@ const Hero = () => {
           <Image
             src="/assets/modern-styled-entryway.jpg"
             fill
+            priority
+            sizes="6"
             alt="hero"
             className=" top-5 object-cover"
           />
@@ -53,6 +57,8 @@ const Hero = () => {
           <Image
             src="/assets/view-nordic-minimalism-japanese-wabi-sabi-interior-design-blend.jpg"
             fill
+            priority
+            sizes="6"
             alt="hero"
             className="object-cover"
           />
@@ -134,9 +140,8 @@ const Hero = () => {
         />
       </div>
 
-      {/* ratings  */}
       <div className="flex justify-center items-center">
-        <span className="flex gap-7 leading-loose flex-wrap  justify-center items-center">
+        <div className="flex gap-7 leading-loose flex-wrap justify-center items-center">
           <p className="text-center ">
             <b>100%</b> <br />
             <span className="text-gray-500">Brand new</span>
@@ -145,9 +150,9 @@ const Hero = () => {
             <b>120,000+</b> <br />
             <span className="text-gray-500">items sold out</span>
           </p>
-          <p className="text-center ">
+          <div className="text-center ">
             <b>Ratings</b> <br />
-            <span className="text-gray-500 flex justify-center items-center gap-2">
+            <div className="text-gray-500 flex justify-center items-center gap-2">
               4.8
               <Image
                 src="/assets/icons8-star-100.png"
@@ -179,9 +184,9 @@ const Hero = () => {
                 height={18}
                 width={18}
               />
-            </span>
-          </p>
-        </span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

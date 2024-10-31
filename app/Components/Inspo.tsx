@@ -26,17 +26,17 @@ function Inspo() {
           <Image
             src={inspo2}
             alt=""
-            className=" xl:h-[25em] md:h-[15rem] h-[10rem] relative -right-16   -rotate-12  rounded-lg drop-shadow-md"
+            className=" xl:h-[25em] md:h-[15rem] md:w-[20rem] h-[10rem] relative -right-16   -rotate-12  rounded-lg drop-shadow-md"
           />
           <Image
             src={inspo3}
             alt=""
-            className=" xl:h-[30rem] md:h-[20rem] h-[15rem] rounded-lg drop-shadow-md"
+            className=" xl:h-[30rem] md:h-[20rem] md:w-[25rem] h-[15rem] rounded-lg drop-shadow-md"
           />
           <Image
             src={inspo4}
             alt=""
-            className=" xl:h-[25rem] md:h-[15rem] h-[10rem] relative right-16  -z-10 rotate-12 rounded-lg drop-shadow-md"
+            className=" xl:h-[25rem] md:h-[15rem] md:w-[20rem] h-[10rem] relative right-16  -z-10 rotate-12 rounded-lg drop-shadow-md"
           />
           <Image
             src={inspo5}
