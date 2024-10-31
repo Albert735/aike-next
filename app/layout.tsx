@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../app/globals.css";
 import Nav from "./Components/Nav";
+import Footer from "./Components/Footer";
 
 export const metadata: Metadata = {
   title: "Aike",
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body>
         <Nav />
         {children}
+        <Footer />
       </body>
     </html>
   );

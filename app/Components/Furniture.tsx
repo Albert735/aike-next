@@ -1,20 +1,30 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import { PopularArrays } from "../../public/Arrays/PopularFurnture";
 
 const Furniture = () => {
+  const [liked, setLiked] = useState<Record<number, boolean>>({});
+
+  const handleLiked = (index: number) => {
+    setLiked((prevLiked) => ({
+      ...prevLiked,
+      [index]: !prevLiked[index], // Removed the space here
+    }));
+  };
   return (
     <div className="flex flex-col justify-between items-center max-w-screen-xl mx-auto py-4 xl:px-2 px-4 space-y-[2rem] mt-[5rem]">
-      <div className="flex flex-col justify-center items-center w-full py-5">
-        <h1 className="CisalackSignature text-xl">POPULAR</h1>
+      <div className="flex flex-col justify-center items-center  py-5">
+        <h1 className="CisalackSignature text-[2rem]">Popular</h1>
         <h1 className="Golanerounded text-[2rem]">Furniture Sale Now On!</h1>
       </div>
 
-      <div className="flex space-x-5">
+      <div className="flex flex-col flex-wrap justify-center items-center xl:flex-row gap-x-5 gap-y-5 ">
         {PopularArrays.map((item, index) => (
           <div
             key={index}
-            className="p-2 bg-gray-100 rounded-lg backdrop-blur hover:scale-105 transition-all ease-in-out duration-150"
+            className="p-2 gap-4 bg-gray-100 rounded-lg backdrop-blur hover:scale-105 transition-all ease-in-out duration-150 border border-gray-200"
           >
             <div className="w-[15rem] h-[20rem] relative overflow-hidden rounded-lg">
               <Image
@@ -24,18 +34,23 @@ const Furniture = () => {
                 className="object-cover"
               />
             </div>
-            <div className="Golanerounded flex justify-between py-2">
+            <div className="Golanerounded flex justify-between py-3">
               <span>
                 <h2 className="font-bold">{item.name}</h2>
                 <p className="text-gray-600">{item.description}</p>
               </span>
               <svg
+                onClick={() => handleLiked(index)}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
                 className="w-6 h-6 text-gray-700"
+                style={{
+                  fill: liked[index] ? "red" : "none", // Toggle the fill color
+                  color: liked[index] ? "red" : "gray", // Toggle the stroke color
+                }}
               >
                 <path
                   strokeLinecap="round"
