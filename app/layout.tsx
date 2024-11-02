@@ -1,7 +1,9 @@
+// app/layout.tsx
 import type { Metadata } from "next";
-import "../app/globals.css";
+import "./globals.css";
 import Nav from "./Components/Nav";
 import Footer from "./Components/Footer";
+import { AppProvider } from "./contexts/AppContext";
 
 export const metadata: Metadata = {
   title: "Aike",
@@ -10,15 +12,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body>
-        <Nav />
-        {children}
-        <Footer />
+        <AppProvider>
+          {" "}
+          {/* Wrap the app with the context provider */}
+          <Nav />
+          {children}
+          <Footer />
+        </AppProvider>
       </body>
     </html>
   );

@@ -1,19 +1,18 @@
 "use client";
 
-import React, { useState } from "react";
+import { useAppContext } from "../contexts/AppContext";
 import Image from "next/image";
 import { PopularArrays } from "../../public/Arrays/PopularFurnture";
 
 const Furniture = () => {
-  const [liked, setLiked] = useState<Record<number, boolean>>({});
 
-  const handleLiked = (index: number) => {
-    setLiked((prevLiked) => ({
-      ...prevLiked,
-      [index]: !prevLiked[index],
-    }));
-    console.log(index, "liked");
-  };
+
+
+  const { liked, handleLiked } = useAppContext();
+
+
+
+  
 
   return (
     <div className="flex flex-col justify-between items-center max-w-screen-xl mx-auto py-4 xl:px-2 px-4 space-y-[2rem] mt-[5rem]">
@@ -47,9 +46,12 @@ const Furniture = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
-                className={`w-6 h-6 ${
-                  liked[index] ? "text-red-500 fill-red-500" : "text-white"
-                }`}
+                stroke="currentColor"
+                className="w-6 h-6 cursor-pointer"
+                style={{
+                  fill: liked[index] ? "red" : "none", // Toggle color per item
+                  color: liked[index] ? "red" : "gray",
+                }}
               >
                 <path
                   strokeLinecap="round"
