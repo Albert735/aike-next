@@ -194,9 +194,11 @@ const Details = ({
         <div className="flex justify-between items-center gap-4">
           <div className="flex flex-col gap-2">
             <h2 className="text-2xl font-bold text-gray-700">$200.00</h2>
-            <p className="text-gray-500 text-[12px] w-[25rem]">
+            <span className="flex justify-between text-gray-500 text-[12px] w-[25rem] ">
               <Rating maxStars={5} />
-            </p>
+
+              <p className="text-gray-500 text-base">441 reviews</p>
+            </span>
           </div>
         </div>
       </div>

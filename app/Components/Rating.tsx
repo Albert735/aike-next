@@ -22,7 +22,7 @@ const Rating = ({ maxStars = 5 }: { maxStars?: number }) => {
   };
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center gap-1">
       {[...Array(maxStars)].map((_, index) => {
         const starIndex = index + 1;
         return (
@@ -34,7 +34,7 @@ const Rating = ({ maxStars = 5 }: { maxStars?: number }) => {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6 cursor-pointer"
+            className="w-5 h-5 cursor-pointer"
             onClick={() => handleRating(starIndex)}
             onMouseEnter={() => handleHover(starIndex)}
             onMouseLeave={handleMouseOut}
