@@ -14,11 +14,13 @@ const Details = ({
 
   return (
     <div
-      className="flex flex-col lg:flex-row justify-between items-start max-w-screen-xl mx-auto py-[2rem] xl:px-2 px-4 gap-[2rem]"
+      className="flex flex-col lg:flex-row justify-between items-start max-w-screen-xl mx-auto py-[2rem] xl:px-2 px-4 gap-[4rem]"
       id="productDetails"
     >
       <div className="flex flex-col gap-5 w-full">
-        <h1 className="text-3xl font-bold text-gray-900">Product Details</h1>
+        <h1 className="Golanerounded text-3xl font-bold text-gray-900">
+          Product Details
+        </h1>
         <div className="flex gap-4">
           <div className="w-[30rem] h-[25rem] relative overflow-hidden rounded-lg">
             <Image
@@ -158,14 +160,14 @@ const Details = ({
 
       <hr className="flex self-center border-gray-100 border  h-[70dvh] w-[1px]" />
 
-      <div className="flex flex-col gap-4 w-full">
+      <div className="flex flex-col gap-10 w-full">
         {/* product details  */}
         <span className="flex justify-between items-start">
           <span className="flex flex-col gap-2">
-            <h2 className="text-2xl font-bold text-gray-900">
+            <h2 className=" Golanerounded text-2xl font-bold text-gray-900">
               Maddonnut {params.productId}
             </h2>
-            <p className="text-gray-500 text-[12px] w-[25rem]">
+            <p className="Golanerounded text-gray-500 text-base w-[25rem]">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
               expedita ducimus modi, est deleniti fuga commodi qui, quasi nulla
               atque recusandae velit a corporis fugiat eaque aperiam in officia
@@ -193,13 +195,57 @@ const Details = ({
         {/* price and reviews */}
         <div className="flex justify-between items-center gap-4">
           <div className="flex flex-col gap-2">
-            <h2 className="text-2xl font-bold text-gray-700">$200.00</h2>
+            <p className="Golanerounded text-gray-500 text-sm">Price</p>
+            <h2 className=" text-2xl font-bold text-gray-700">$200.00</h2>
             <span className="flex justify-between text-gray-500 text-[12px] w-[25rem] ">
               <Rating maxStars={5} />
 
-              <p className="text-gray-500 text-base">441 reviews</p>
+              <p className="Golanerounded text-gray-500 text-base">
+                441 reviews
+              </p>
             </span>
           </div>
+        </div>
+
+        {/* color  */}
+        <div className="flex flex-col justify-start items-start gap-4">
+          <h2 className="Golanerounded text-2xl font-bold text-gray-700">
+            Color
+          </h2>
+          <div className="flex justify-between items-center gap-4">
+            <div
+              className="flex justify-center items-center bg-[#F0AB5F] rounded-full  h-8
+             w-8"
+            ></div>
+            <div
+              className="flex justify-center items-center bg-[#97918A] rounded-full  h-8
+             w-8"
+            ></div>
+            <div
+              className="flex justify-center items-center bg-[#68778E] rounded-full  h-8
+             w-8"
+            ></div>
+            <div
+              className="flex justify-center items-center bg-[#6D704D] rounded-full  h-8
+             w-8"
+            ></div>
+
+            <div
+              className="flex justify-center items-center bg-[#273F55] rounded-full  h-8
+             w-8"
+            ></div>
+          </div>
+        </div>
+
+        {/* purchasing  */}
+
+        <div className="Golanerounded flex justify-start items-center gap-5">
+          <button className="text-black py-2 px-4 rounded-md border border-gray-200 hover:bg-black/10 backdrop-blur-lg">
+            Buy Now
+          </button>
+          <button className="bg-black text-white py-2 px-4 rounded-md">
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
