@@ -5,14 +5,7 @@ import Image from "next/image";
 import { PopularArrays } from "../../public/Arrays/PopularFurnture";
 
 const Furniture = () => {
-
-
-
   const { liked, handleLiked } = useAppContext();
-
-
-
-  
 
   return (
     <div className="flex flex-col justify-between items-center max-w-screen-xl mx-auto py-4 xl:px-2 px-4 space-y-[2rem] mt-[5rem]">

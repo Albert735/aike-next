@@ -14,15 +14,15 @@ const Details = ({
 
   return (
     <div
-      className="flex flex-col lg:flex-row justify-between items-start max-w-screen-xl mx-auto py-[2rem] xl:px-2 px-4 gap-[4rem]"
+      className="flex flex-col lg:flex-row justify-between items-start h-[100vh] max-w-screen-xl mx-auto pt-[5rem] xl:px-2 px-4 gap-[4rem]"
       id="productDetails"
     >
-      <div className="flex flex-col gap-5 w-full">
+      <div className="flex flex-col gap-[2rem] w-full">
         <h1 className="Golanerounded text-3xl font-bold text-gray-900">
           Product Details
         </h1>
         <div className="flex gap-4">
-          <div className="w-[30rem] h-[25rem] relative overflow-hidden rounded-lg">
+          <div className="w-[30rem] h-[25rem] relative overflow-hidden rounded-md">
             <Image
               src="/assets/3d-modern-lamp-design.jpg"
               alt=""
@@ -158,7 +158,7 @@ const Details = ({
         </div>
       </div>
 
-      <hr className="flex self-center border-gray-100 border  h-[70dvh] w-[1px]" />
+      <hr className="flex place-self-auto border-gray-100 border  h-[70dvh] w-[1px]" />
 
       <div className="flex flex-col gap-10 w-full">
         {/* product details  */}
@@ -246,6 +246,53 @@ const Details = ({
           <button className="bg-black text-white py-2 px-4 rounded-md">
             Add to Cart
           </button>
+        </div>
+
+        {/* delivery  */}
+        <div className="flex flex-col justify-between items-center gap-[2rem]">
+          <div className="flex flex-row justify-between items-center gap-2 border-b border-gray-200 rounded-md p-2 w-full">
+            <span>
+              <p className="Golanerounded text-gray-500 text-sm">
+                Dispatch in 5-7 weeks
+              </p>
+              <p className="Golanerounded text-gray-500 text-sm">
+                Why the longer lead time?
+              </p>
+            </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
+          <div className="flex flex-row justify-between items-center gap-2 border-b border-gray-200 rounded-md p-2 w-full">
+            <p className="Golanerounded text-gray-500 text-sm">
+              Home Delivery - $10
+            </p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
         </div>
       </div>
     </div>
