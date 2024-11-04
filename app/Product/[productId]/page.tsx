@@ -1,8 +1,11 @@
 "use client";
 
 import React from "react";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Rating from "../../Components/Rating";
+import { useAppContext } from "../../contexts/AppContext";
 
 const Details = ({
   params: paramsPromise,
@@ -10,7 +13,22 @@ const Details = ({
   params: Promise<{ productId: string }>;
 }) => {
   // Unwrap the promise with `React.use()`
-  const params = React.use(paramsPromise);
+  const [params, setParams] = useState<{ productId: string } | null>(null);
+  const { liked, handleLiked } = useAppContext();
+
+  useEffect(() => {
+    paramsPromise.then((resolvedParams) => {
+      setParams(resolvedParams);
+    });
+  }, [paramsPromise]);
+
+  if (!params) {
+    return (
+      <p className="h-screen flex justify-center items-center w-screen">
+        Loading...
+      </p>
+    ); // Optional loading state
+  }
 
   return (
     <div
@@ -26,6 +44,7 @@ const Details = ({
             <Image
               src="/assets/3d-modern-lamp-design.jpg"
               alt=""
+              priority
               className="hover:scale-110 transition-all ease-in-out delay-150 duration-150"
               fill
               sizes="6"
@@ -37,6 +56,7 @@ const Details = ({
                 src="/assets/3d-modern-lamp-design.jpg"
                 alt=""
                 className="object-fit block"
+                priority
                 fill
                 sizes="6"
               />
@@ -46,6 +66,7 @@ const Details = ({
                 src="/assets/3d-modern-lamp-design.jpg"
                 alt=""
                 className="object-fit"
+                priority
                 fill
                 sizes="6"
               />
@@ -55,6 +76,7 @@ const Details = ({
                 src="/assets/3d-modern-lamp-design.jpg"
                 alt=""
                 className="object-fit"
+                priority
                 fill
                 sizes="6"
               />
@@ -64,6 +86,7 @@ const Details = ({
                 src="/assets/3d-modern-lamp-design.jpg"
                 alt=""
                 className="object-fit"
+                priority
                 fill
                 sizes="6"
               />
@@ -116,6 +139,7 @@ const Details = ({
                 src="/assets/3d-modern-lamp-design.jpg"
                 alt=""
                 className="hover:scale-110 transition-all ease-in-out delay-150 duration-150"
+                priority
                 fill
                 sizes="6"
               />
@@ -129,6 +153,7 @@ const Details = ({
             <div className="w-[10rem] h-[10rem] relative overflow-hidden rounded-lg">
               <Image
                 src="/assets/3d-modern-lamp-design.jpg"
+                priority
                 alt=""
                 className="hover:scale-110 transition-all ease-in-out delay-150 duration-150"
                 fill
@@ -144,6 +169,7 @@ const Details = ({
             <div className="w-[10rem] h-[10rem] relative overflow-hidden rounded-lg">
               <Image
                 src="/assets/3d-modern-lamp-design.jpg"
+                priority
                 alt=""
                 className="hover:scale-110 transition-all ease-in-out delay-150 duration-150"
                 fill
@@ -183,6 +209,11 @@ const Details = ({
               strokeWidth={1.5}
               stroke="currentColor"
               className="size-5"
+              style={{
+                fill: liked[params.productId] ? "red" : "none", // Toggle color per item
+                color: liked[params.productId] ? "red" : "gray",
+              }}
+              onClick={() => handleLiked(params.productId)}
             >
               <path
                 strokeLinecap="round"

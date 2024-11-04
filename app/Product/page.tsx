@@ -129,25 +129,28 @@ const CartItems = () => {
               <TableCell>$250.00</TableCell>
               <TableCell className="text-right">$250.00</TableCell>
             </TableRow>
+
             <TableRow>
-              <TableCell className="font-medium flex gap-5">
-                <div className="w-[10rem] h-[15rem] relative overflow-hidden rounded-lg">
-                  <Image
-                    fill
-                    sizes="6"
-                    src={inspo2}
-                    alt=""
-                    className="hover:scale-110 transition-all ease-in-out delay-150 duration-150"
-                  />
-                </div>
-                <div className="flex flex-col gap-3 px-3">
-                  <p className="Golanerounded text-[1.5rem]">Orammmut</p>
-                  <p className="text-gray-400">Sofa</p>
-                  <button className="text-red-400 border hover:border-red-300 hover:bg-red-200 hover:text-red-500 w-full transition-all ease-in-out duration-150 rounded-md py-2 px-3 ">
-                    Remove
-                  </button>
-                </div>
-              </TableCell>
+              <Link href="/Product/productId">
+                <TableCell className="font-medium flex gap-5">
+                  <div className="w-[10rem] h-[15rem] relative overflow-hidden rounded-lg">
+                    <Image
+                      fill
+                      sizes="6"
+                      src={inspo2}
+                      alt=""
+                      className="hover:scale-110 transition-all ease-in-out delay-150 duration-150"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-3 px-3">
+                    <p className="Golanerounded text-[1.5rem]">Orammmut</p>
+                    <p className="text-gray-400">Sofa</p>
+                    <button className="text-red-400 border hover:border-red-300 hover:bg-red-200 hover:text-red-500 w-full transition-all ease-in-out duration-150 rounded-md py-2 px-3 ">
+                      Remove
+                    </button>
+                  </div>
+                </TableCell>
+              </Link>
               <TableCell>
                 <div className="flex justify-between items-center gap-3 border p-2 rounded-lg w-[6rem]">
                   <span>

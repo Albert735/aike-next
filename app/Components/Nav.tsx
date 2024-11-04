@@ -15,6 +15,7 @@ const Nav = () => {
   const toggleCategory = () => setCategory(!category);
 
   const pathname = usePathname();
+  if (!pathname) return null; // Early return to prevent issues with undefined pathname.
   console.log(pathname);
 
   return (
@@ -220,7 +221,9 @@ const Nav = () => {
                   className={`link ${
                     pathname === "/Promo" ? "text-black" : "text-gray-400"
                   }`}
-                ></Link>
+                >
+                  Promo
+                </Link>
               </li>
 
               <li>
