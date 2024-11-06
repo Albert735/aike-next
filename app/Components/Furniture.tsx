@@ -3,9 +3,11 @@
 import { useAppContext } from "../contexts/AppContext";
 import Image from "next/image";
 import { product } from "../../public/Arrays/PopularFurnture";
+import toast, { Toaster } from "react-hot-toast";
 
 const Furniture = () => {
   const { liked, handleLiked, addToCart } = useAppContext();
+  const notify = () => toast.success("Added to cart");
 
   return (
     <div className="flex flex-col justify-between items-center max-w-screen-xl mx-auto py-4 xl:px-2 px-4 space-y-[2rem] mt-[5rem]">
@@ -13,7 +15,6 @@ const Furniture = () => {
         <h1 className="CisalackSignature text-[2rem]">Popular</h1>
         <h1 className="Golanerounded text-[2rem]">Furniture Sale Now On!</h1>
       </div>
-
       <div className="flex flex-wrap justify-center items-center xl:flex-row gap-x-5 gap-y-5">
         {product.map((item, index) => (
           <div
@@ -55,16 +56,20 @@ const Furniture = () => {
                   />
                 </svg>
                 <button
-                  onClick={() => addToCart(index)}
+                  onClick={() => {
+                    addToCart(index);
+                    notify();
+                  }}
                   className="Golanerounded text-white bg-black py-2 px-4 rounded-lg"
                 >
                   +
                 </button>
               </span>
-            </div>
+            </div>{" "}
           </div>
         ))}
-      </div>
+      </div>{" "}
+      <Toaster />
     </div>
   );
 };

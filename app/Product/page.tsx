@@ -1,7 +1,7 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
-import inspo1 from "../../public/assets/inspo1.jpg";
-// import inspo2 from "../../public/assets/inspo2.jpg";
 import Link from "next/link";
 
 import {
@@ -14,9 +14,11 @@ import {
   TableRow,
 } from "../Components/ui/table";
 import { useAppContext } from "../contexts/AppContext";
+import { product as defaultProduct } from "../../public/Arrays/PopularFurnture";
 
-const CartItems = ({product}) => {
+const CartItems = ({ product = defaultProduct }) => {
   const { cartItems } = useAppContext();
+
   return (
     <div
       className="flex flex-col justify-start h-[100vh] items-center max-w-screen-xl mx-auto py-4 xl:px-2 px-4 gap-[2rem]"
@@ -29,7 +31,7 @@ const CartItems = ({product}) => {
           <span className="text-black">FREE shipping</span>{" "}
         </h1>
         <span className="relative flex justify-center items-center gap-2">
-          <span className="h-2   w-[30rem] bg-green-300 rounded-lg"></span>
+          <span className="h-2 w-[30rem] bg-green-300 rounded-lg"></span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -48,15 +50,8 @@ const CartItems = ({product}) => {
       </div>
 
       {/* cart items */}
-
       <div className="flex flex-col justify-start items-start w-full gap-5 ">
-        {/* <div className="w-[10rem] h-[15rem] relative overflow-hidden rounded-lg">
-            <Image fill sizes="6" src={inspo1} alt="" />
-          </div>
-
-        <div>
-          */}
-        <Table className="w-full">
+        <Table className="w-full bg-cyan-300">
           <TableCaption>A list of your recent orders.</TableCaption>
           <TableHeader>
             <TableRow>
@@ -68,131 +63,85 @@ const CartItems = ({product}) => {
           </TableHeader>
 
           {/* cart items */}
-          <TableBody>
-            <TableRow>
-              <Link href="/Product/productId">
-                <TableCell className="font-medium flex gap-5">
-                  <div className="w-[10rem] h-[15rem] relative overflow-hidden rounded-lg">
-                    <Image
-                      fill
-                      sizes="6"
-                      src={product.image}
-                      alt=""
-                      className="hover:scale-110 transition-all ease-in-out delay-150 duration-150"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-3 px-3">
-                    <p className="Golanerounded text-[1.5rem]">Orammmut</p>
-                    <p className="text-gray-400">Sofa</p>
-                    <button className="text-red-400 border hover:border-red-300 hover:bg-red-200 hover:text-red-500 w-full transition-all ease-in-out duration-150 rounded-md py-2 px-3 ">
-                      Remove
-                    </button>
-                  </div>
-                </TableCell>
-              </Link>
+          <TableBody className=" space-y-3">
+            {cartItems.length > 0 ? (
+              cartItems.map((product) => (
+                <Link
+                  href={`/Product/${product.id}`}
+                  key={product.id}
+                  className="flex justify-start items-start gap-3  bg-white rounded-lg w-full hover:bg-gray-100"
+                >
+                  <TableRow className="flex justify-start items-start w-full bg-red-400">
+                    <TableCell className="w-full font-medium flex gap-5 bg-orange-300">
+                      <div className="w-[10rem] h-[15rem] relative overflow-hidden rounded-lg">
+                        <Image
+                          src={product.image || "/fallback-image.jpg"} // Fallback if no image
+                          alt={product.name || "Product"} // Use fallback name if no name
+                          fill
+                          sizes="6"
+                          className="hover:scale-110 transition-all ease-in-out delay-150 duration-150"
+                        />
+                      </div>
+                      <div className="flex flex-col gap-3 px-3">
+                        <p className="Golanerounded text-[1.5rem]">
+                          {product.name}
+                        </p>
+                        <p className="text-gray-400">
+                          {product.category || "Category"}
+                        </p>
+                        <button className="text-red-400 border hover:border-red-300 hover:bg-red-200 hover:text-red-500 w-full transition-all ease-in-out duration-150 rounded-md py-2 px-3 ">
+                          Remove
+                        </button>
+                      </div>
+                    </TableCell>
 
-              <TableCell>
-                <div className="flex justify-between items-center gap-3 border p-2 rounded-lg w-[6rem]">
-                  <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="size-4 hover:bg-gray-200"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 4.5v15m7.5-7.5h-15"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-black">1</p>
-                  <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="size-4 hover:bg-gray-200"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M5 12h14"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </TableCell>
-              <TableCell>$250.00</TableCell>
-              <TableCell className="text-right">$250.00</TableCell>
-            </TableRow>
-
-            {/* <TableRow>
-              <Link href="/Product/productId">
-                <TableCell className="font-medium flex gap-5">
-                  <div className="w-[10rem] h-[15rem] relative overflow-hidden rounded-lg">
-                    <Image
-                      fill
-                      sizes="6"
-                      src={inspo2}
-                      alt=""
-                      className="hover:scale-110 transition-all ease-in-out delay-150 duration-150"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-3 px-3">
-                    <p className="Golanerounded text-[1.5rem]">Orammmut</p>
-                    <p className="text-gray-400">Sofa</p>
-                    <button className="text-red-400 border hover:border-red-300 hover:bg-red-200 hover:text-red-500 w-full transition-all ease-in-out duration-150 rounded-md py-2 px-3 ">
-                      Remove
-                    </button>
-                  </div>
-                </TableCell>
-              </Link>
-              <TableCell>
-                <div className="flex justify-between items-center gap-3 border p-2 rounded-lg w-[6rem]">
-                  <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="size-4 hover:bg-gray-200"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 4.5v15m7.5-7.5h-15"
-                      />
-                    </svg>
-                  </span>
-                  <p className="text-black">1</p>
-                  <span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="size-4 hover:bg-gray-200"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M5 12h14"
-                      />
-                    </svg>
-                  </span>
-                </div>
-              </TableCell>
-              <TableCell>$250.00</TableCell>
-              <TableCell className="text-right">$250.00</TableCell>
-            </TableRow> */}
+                    <TableCell className="text-center bg-purple-500">
+                      <div className="flex justify-between items-center gap-3 border p-2 rounded-lg w-[6rem]">
+                        <span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                            className="size-4 hover:bg-gray-200"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M12 4.5v15m7.5-7.5h-15"
+                            />
+                          </svg>
+                        </span>
+                        <p className="text-black">1</p>
+                        <span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                            className="size-4 hover:bg-gray-200"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M5 12h14"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </TableCell>
+                    <TableCell className="text-center bg-pink-400">${product.price || "0.00"}</TableCell>
+                    <TableCell className="text-right">
+                      ${product.price || "0.00"}
+                    </TableCell>
+                  </TableRow>
+                </Link>
+              ))
+            ) : (
+              <p className="text-center w-full">No products available.</p>
+            )}
           </TableBody>
         </Table>
       </div>
