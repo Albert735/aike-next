@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import inspo1 from "../../public/assets/inspo1.jpg";
-import inspo2 from "../../public/assets/inspo2.jpg";
+// import inspo2 from "../../public/assets/inspo2.jpg";
 import Link from "next/link";
 
 import {
@@ -13,8 +13,10 @@ import {
   TableHeader,
   TableRow,
 } from "../Components/ui/table";
+import { useAppContext } from "../contexts/AppContext";
 
-const CartItems = () => {
+const CartItems = ({product}) => {
+  const { cartItems } = useAppContext();
   return (
     <div
       className="flex flex-col justify-start h-[100vh] items-center max-w-screen-xl mx-auto py-4 xl:px-2 px-4 gap-[2rem]"
@@ -74,7 +76,7 @@ const CartItems = () => {
                     <Image
                       fill
                       sizes="6"
-                      src={inspo1}
+                      src={product.image}
                       alt=""
                       className="hover:scale-110 transition-all ease-in-out delay-150 duration-150"
                     />
@@ -130,7 +132,7 @@ const CartItems = () => {
               <TableCell className="text-right">$250.00</TableCell>
             </TableRow>
 
-            <TableRow>
+            {/* <TableRow>
               <Link href="/Product/productId">
                 <TableCell className="font-medium flex gap-5">
                   <div className="w-[10rem] h-[15rem] relative overflow-hidden rounded-lg">
@@ -190,7 +192,7 @@ const CartItems = () => {
               </TableCell>
               <TableCell>$250.00</TableCell>
               <TableCell className="text-right">$250.00</TableCell>
-            </TableRow>
+            </TableRow> */}
           </TableBody>
         </Table>
       </div>

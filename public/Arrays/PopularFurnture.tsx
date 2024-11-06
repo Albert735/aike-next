@@ -4,7 +4,7 @@ import Arklestorp from "../assets/arklestorp.jpg";
 import Lax from "../assets/lax.jpg";
 import NaxuDuo from "../assets/Naxuduo.jpg";
 
-export const PopularArrays = [
+export const product = [
   {
     id: 0,
     name: "Kalx Table",
