@@ -2,7 +2,7 @@
 
 import { useAppContext } from "../contexts/AppContext";
 import Image from "next/image";
-import { product } from "../../public/Arrays/PopularFurnture";
+import { Product } from "../../public/Arrays/PopularFurnture";
 import toast, { Toaster } from "react-hot-toast";
 
 const Furniture = () => {
@@ -16,7 +16,7 @@ const Furniture = () => {
         <h1 className="Golanerounded text-[2rem]">Furniture Sale Now On!</h1>
       </div>
       <div className="flex flex-wrap justify-center items-center xl:flex-row gap-x-5 gap-y-5">
-        {product.map((item, index) => (
+        {Product.map((item, index) => (
           <div
             key={index}
             className="p-2 gap-4 bg-gray-100 rounded-lg backdrop-blur hover:scale-105 transition-all ease-in-out duration-150 border border-gray-200"

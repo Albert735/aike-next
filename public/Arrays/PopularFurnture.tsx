@@ -4,7 +4,17 @@ import Arklestorp from "../assets/arklestorp.jpg";
 import Lax from "../assets/lax.jpg";
 import NaxuDuo from "../assets/Naxuduo.jpg";
 
-export const product = [
+export interface ProductType {
+  id: number;
+  name: string;
+  description: string;
+  image: typeof NaxuDuo;
+  price: number;
+  category: string;
+  liked: boolean;
+}
+
+export const Product: ProductType[] = [
   {
     id: 0,
     name: "Kalx Table",
